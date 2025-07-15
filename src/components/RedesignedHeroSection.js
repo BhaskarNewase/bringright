@@ -5,9 +5,9 @@ const RedesignedHeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const stats = [
-    { number: "30+", label: "Years Experience" },
-    { number: "50+", label: "Countries Served" },
-    { number: "1000+", label: "Happy Clients" },
+    { number: "1+", label: "Years Experience" },
+    { number: "5+", label: "Countries Served" },
+    { number: "5+", label: "Happy Clients" },
     { number: "24/7", label: "Support Available" }
   ];
 
@@ -39,7 +39,8 @@ const RedesignedHeroSection = () => {
       display: 'flex',
       alignItems: 'center',
       padding: '80px 0'
-    }}>
+    }}
+    className="hero-section">
       {/* Animated Background Elements */}
       <div style={{
         position: 'absolute',
@@ -63,13 +64,15 @@ const RedesignedHeroSection = () => {
           gridTemplateColumns: '1fr 1fr',
           gap: '60px',
           alignItems: 'center'
-        }}>
+        }}
+        className="hero-grid">
           {/* Left Content */}
           <div style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateX(0)' : 'translateX(-50px)',
             transition: 'all 1s ease-out'
-          }}>
+          }}
+          className="hero-content">
             {/* Main Headline */}
             <div style={{ marginBottom: '20px' }}>
               <span style={{
@@ -82,17 +85,20 @@ const RedesignedHeroSection = () => {
                 letterSpacing: '2px',
                 display: 'block',
                 marginBottom: '10px'
-              }}>
-                Since 2023 • Star Export House
+              }}
+              className="hero-subtitle">
+                Since 2023
+                 {/* • Star Export House */}
               </span>
               <h1 style={{
-                fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                fontSize: 'clamp(2rem, 5vw, 4rem)',
                 fontWeight: '700',
                 color: '#1a5276',
                 lineHeight: '1.1',
                 margin: 0,
                 marginBottom: '20px'
-              }}>
+              }}
+              className="hero-title">
                 Connect to the{' '}
                 <span style={{
                   background: 'linear-gradient(135deg, #f39c12, #e67e22)',
@@ -103,39 +109,43 @@ const RedesignedHeroSection = () => {
                 </span>
               </h1>
               <p style={{
-                fontSize: '1.3rem',
+                fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
                 color: '#2980b9',
                 lineHeight: '1.6',
                 margin: 0,
                 marginBottom: '40px',
                 maxWidth: '500px'
-              }}>
-                Your trusted partner in global import-export excellence, connecting businesses across 50+ countries worldwide
+              }}
+              className="hero-description">
+                Your trusted partner in global import-export excellence, connecting businesses across 5+ countries worldwide
               </p>
             </div>
 
             {/* Action Buttons */}
             <div style={{
               display: 'flex',
-              gap: '20px',
+              gap: '15px',
               marginBottom: '40px',
               flexWrap: 'wrap'
-            }}>
+            }}
+            className="hero-buttons">
               <button style={{
                 background: 'linear-gradient(135deg, #1a5276, #2980b9)',
                 color: 'white',
                 border: 'none',
                 padding: '16px 32px',
                 borderRadius: '50px',
-                fontSize: '1.1rem',
+                fontSize: 'clamp(0.9rem, 2vw, 1.1rem)',
                 fontWeight: '600',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 boxShadow: '0 4px 15px rgba(26, 82, 118, 0.3)',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '10px'
+                gap: '10px',
+                whiteSpace: 'nowrap'
               }}
+              className="btn-primary"
               onMouseOver={(e) => {
                 e.target.style.transform = 'translateY(-2px)';
                 e.target.style.boxShadow = '0 8px 25px rgba(26, 82, 118, 0.4)';
@@ -144,7 +154,7 @@ const RedesignedHeroSection = () => {
                 e.target.style.transform = 'translateY(0)';
                 e.target.style.boxShadow = '0 4px 15px rgba(26, 82, 118, 0.3)';
               }}>
-                <span>🚢</span> Track Your Shipment
+                <span>🚢</span> <span>Explore Products</span>
               </button>
               
               <button style={{
@@ -153,14 +163,16 @@ const RedesignedHeroSection = () => {
                 border: '2px solid #1a5276',
                 padding: '16px 32px',
                 borderRadius: '50px',
-                fontSize: '1.1rem',
+                fontSize: 'clamp(0.9rem, 2vw, 1.1rem)',
                 fontWeight: '600',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '10px'
+                gap: '10px',
+                whiteSpace: 'nowrap'
               }}
+              className="btn-secondary"
               onMouseOver={(e) => {
                 e.target.style.background = '#1a5276';
                 e.target.style.color = 'white';
@@ -171,7 +183,7 @@ const RedesignedHeroSection = () => {
                 e.target.style.color = '#1a5276';
                 e.target.style.transform = 'translateY(0)';
               }}>
-                <span>🌐</span> Explore Services
+                <span>🌐</span> <span>Explore Services</span>
               </button>
             </div>
 
@@ -183,7 +195,8 @@ const RedesignedHeroSection = () => {
               padding: '25px',
               border: '1px solid rgba(26, 82, 118, 0.1)',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)'
-            }}>
+            }}
+            className="hero-stats">
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -197,13 +210,14 @@ const RedesignedHeroSection = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '1.5rem'
+                  fontSize: '1.5rem',
+                  flexShrink: 0
                 }}>
                   📊
                 </div>
                 <div>
                   <div style={{
-                    fontSize: '2rem',
+                    fontSize: 'clamp(1.5rem, 4vw, 2rem)',
                     fontWeight: '700',
                     color: '#1a5276',
                     lineHeight: '1'
@@ -211,7 +225,7 @@ const RedesignedHeroSection = () => {
                     {stats[currentStat].number}
                   </div>
                   <div style={{
-                    fontSize: '1rem',
+                    fontSize: 'clamp(0.9rem, 2vw, 1rem)',
                     color: '#666',
                     fontWeight: '500'
                   }}>
@@ -228,7 +242,8 @@ const RedesignedHeroSection = () => {
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateX(0)' : 'translateX(50px)',
             transition: 'all 1s ease-out 0.3s'
-          }}>
+          }}
+          className="hero-map-container">
             {/* Main Container */}
             <div style={{
               background: 'rgba(255, 255, 255, 0.95)',
@@ -238,14 +253,15 @@ const RedesignedHeroSection = () => {
               border: '1px solid rgba(26, 82, 118, 0.1)',
               position: 'relative',
               overflow: 'hidden'
-            }}>
+            }}
+            className="map-container">
               {/* Header */}
               <div style={{
                 textAlign: 'center',
                 marginBottom: '30px'
               }}>
                 <h3 style={{
-                  fontSize: '1.5rem',
+                  fontSize: 'clamp(1.2rem, 3vw, 1.5rem)',
                   fontWeight: '600',
                   color: '#1a5276',
                   margin: 0,
@@ -256,9 +272,9 @@ const RedesignedHeroSection = () => {
                 <p style={{
                   color: '#666',
                   margin: 0,
-                  fontSize: '1rem'
+                  fontSize: 'clamp(0.9rem, 2vw, 1rem)'
                 }}>
-                  Global trade network spanning 50+ countries
+                  Global trade network spanning 5+ countries
                 </p>
               </div>
 
@@ -271,7 +287,8 @@ const RedesignedHeroSection = () => {
                 borderRadius: '20px',
                 overflow: 'hidden',
                 border: '2px solid rgba(26, 82, 118, 0.1)'
-              }}>
+              }}
+              className="world-map">
                 {/* Simplified World Map SVG */}
                 <svg viewBox="0 0 1000 500" style={{
                   width: '100%',
@@ -301,20 +318,21 @@ const RedesignedHeroSection = () => {
                       position: 'absolute',
                       top: partner.position.top,
                       left: partner.position.left,
-                      width: '40px',
-                      height: '40px',
+                      width: 'clamp(30px, 5vw, 40px)',
+                      height: 'clamp(30px, 5vw, 40px)',
                       background: 'white',
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      fontSize: '1.2rem',
+                      fontSize: 'clamp(0.8rem, 2vw, 1.2rem)',
                       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',
                       animation: `pulse 2s ease-in-out infinite ${index * 0.2}s`,
                       border: '2px solid #1a5276'
                     }}
+                    className="flag-icon"
                     title={partner.country}
                     onMouseOver={(e) => {
                       e.target.style.transform = 'scale(1.2)';
@@ -334,27 +352,30 @@ const RedesignedHeroSection = () => {
                   position: 'absolute',
                   top: '60%',
                   left: '30%',
-                  fontSize: '2rem',
+                  fontSize: 'clamp(1.5rem, 3vw, 2rem)',
                   animation: 'float 3s ease-in-out infinite'
-                }}>
+                }}
+                className="shipping-icon">
                   🚢
                 </div>
                 <div style={{
                   position: 'absolute',
                   top: '20%',
                   right: '25%',
-                  fontSize: '1.5rem',
+                  fontSize: 'clamp(1rem, 2.5vw, 1.5rem)',
                   animation: 'float 2.5s ease-in-out infinite 1s'
-                }}>
+                }}
+                className="shipping-icon">
                   ✈️
                 </div>
                 <div style={{
                   position: 'absolute',
                   bottom: '20%',
                   left: '60%',
-                  fontSize: '1.5rem',
+                  fontSize: 'clamp(1rem, 2.5vw, 1.5rem)',
                   animation: 'float 2s ease-in-out infinite 0.5s'
-                }}>
+                }}
+                className="shipping-icon">
                   🚛
                 </div>
               </div>
@@ -365,7 +386,8 @@ const RedesignedHeroSection = () => {
                 gridTemplateColumns: 'repeat(2, 1fr)',
                 gap: '15px',
                 marginTop: '25px'
-              }}>
+              }}
+              className="quick-stats">
                 <div style={{
                   background: 'linear-gradient(135deg, #1a5276, #2980b9)',
                   color: 'white',
@@ -373,8 +395,8 @@ const RedesignedHeroSection = () => {
                   borderRadius: '15px',
                   textAlign: 'center'
                 }}>
-                  <div style={{ fontSize: '1.5rem', fontWeight: '700' }}>50+</div>
-                  <div style={{ fontSize: '0.9rem', opacity: '0.9' }}>Countries</div>
+                  <div style={{ fontSize: 'clamp(1.2rem, 3vw, 1.5rem)', fontWeight: '700' }}>5+</div>
+                  <div style={{ fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', opacity: '0.9' }}>Countries</div>
                 </div>
                 <div style={{
                   background: 'linear-gradient(135deg, #f39c12, #e67e22)',
@@ -383,8 +405,8 @@ const RedesignedHeroSection = () => {
                   borderRadius: '15px',
                   textAlign: 'center'
                 }}>
-                  <div style={{ fontSize: '1.5rem', fontWeight: '700' }}>24/7</div>
-                  <div style={{ fontSize: '0.9rem', opacity: '0.9' }}>Support</div>
+                  <div style={{ fontSize: 'clamp(1.2rem, 3vw, 1.5rem)', fontWeight: '700' }}>24/7</div>
+                  <div style={{ fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', opacity: '0.9' }}>Support</div>
                 </div>
               </div>
             </div>
@@ -397,20 +419,22 @@ const RedesignedHeroSection = () => {
         position: 'absolute',
         top: '10%',
         right: '10%',
-        fontSize: '3rem',
+        fontSize: 'clamp(2rem, 4vw, 3rem)',
         opacity: '0.2',
         animation: 'float 4s ease-in-out infinite'
-      }}>
+      }}
+      className="floating-element">
         🌐
       </div>
       <div style={{
         position: 'absolute',
         bottom: '10%',
         left: '5%',
-        fontSize: '2rem',
+        fontSize: 'clamp(1.5rem, 3vw, 2rem)',
         opacity: '0.2',
         animation: 'float 3.5s ease-in-out infinite 1.5s'
-      }}>
+      }}
+      className="floating-element">
         📦
       </div>
 
@@ -425,10 +449,167 @@ const RedesignedHeroSection = () => {
           50% { transform: scale(1.1); }
         }
         
-        @media (max-width: 768px) {
-          .grid {
+        /* Tablet Styles */
+        @media (max-width: 992px) {
+          .hero-grid {
             grid-template-columns: 1fr !important;
             gap: 40px !important;
+          }
+          
+          .hero-section {
+            padding: 60px 0 !important;
+            min-height: 70vh !important;
+          }
+          
+          .map-container {
+            padding: 30px !important;
+          }
+          
+          .world-map {
+            height: 250px !important;
+          }
+        }
+        
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+          .hero-section {
+            padding: 40px 0 !important;
+            min-height: auto !important;
+          }
+          
+          .hero-content {
+            text-align: center !important;
+          }
+          
+          .hero-buttons {
+            justify-content: center !important;
+            gap: 10px !important;
+          }
+          
+          .btn-primary, .btn-secondary {
+            padding: 14px 24px !important;
+            min-width: 140px !important;
+          }
+          
+          .hero-stats {
+            padding: 20px !important;
+          }
+          
+          .map-container {
+            padding: 25px !important;
+          }
+          
+          .world-map {
+            height: 200px !important;
+          }
+          
+          .flag-icon {
+            width: 30px !important;
+            height: 30px !important;
+          }
+          
+          .quick-stats {
+            gap: 10px !important;
+          }
+          
+          .quick-stats > div {
+            padding: 12px !important;
+          }
+        }
+        
+        /* Small Mobile Styles */
+        @media (max-width: 480px) {
+          .hero-section {
+            padding: 30px 0 !important;
+          }
+          
+          .hero-grid {
+            gap: 30px !important;
+          }
+          
+          .hero-buttons {
+            flex-direction: column !important;
+            align-items: center !important;
+          }
+          
+          .btn-primary, .btn-secondary {
+            width: 100% !important;
+            max-width: 280px !important;
+            justify-content: center !important;
+          }
+          
+          .map-container {
+            padding: 20px !important;
+            border-radius: 20px !important;
+          }
+          
+          .world-map {
+            height: 180px !important;
+            border-radius: 15px !important;
+          }
+          
+          .hero-stats {
+            padding: 15px !important;
+          }
+          
+          .floating-element {
+            display: none !important;
+          }
+          
+          /* Adjust flag positions for mobile */
+          .flag-icon {
+            width: 25px !important;
+            height: 25px !important;
+            font-size: 0.7rem !important;
+          }
+        }
+        
+        /* Extra Small Mobile */
+        @media (max-width: 360px) {
+          .hero-section div[style*="padding: '0 20px'"] {
+            padding: 0 15px !important;
+          }
+          
+          .world-map {
+            height: 160px !important;
+          }
+          
+          .map-container {
+            padding: 15px !important;
+          }
+          
+          .hero-subtitle {
+            font-size: 0.9rem !important;
+            letter-spacing: 1px !important;
+          }
+        }
+        
+        /* Landscape Mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+          .hero-section {
+            min-height: 100vh !important;
+            padding: 20px 0 !important;
+          }
+          
+          .hero-grid {
+            gap: 20px !important;
+          }
+          
+          .world-map {
+            height: 140px !important;
+          }
+        }
+        
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+          .btn-primary, .btn-secondary {
+            padding: 18px 32px !important;
+            font-size: 1rem !important;
+          }
+          
+          .flag-icon {
+            width: 35px !important;
+            height: 35px !important;
           }
         }
       `}</style>

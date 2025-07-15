@@ -12,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     const animateCounters = () => {
-      const targets = { experience: 30, countries: 50, clients: 1000, support: 24 };
+      const targets = { experience: 1, countries: 5, clients: 5, support: 24 };
       const duration = 2000;
       const steps = 60;
       const interval = duration / steps;
@@ -51,7 +51,7 @@ const Home = () => {
                 </div>
                 <h4>WhatsApp Connect</h4>
                 <p>Get instant support and quick responses</p>
-                <a href="https://wa.me/911234567890" className="btn btn-success btn-sm" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/+919975349144" className="btn btn-success btn-sm" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-whatsapp me-1"></i>Chat Now
                 </a>
               </div>

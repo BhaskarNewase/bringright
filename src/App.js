@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -13,31 +14,28 @@ import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
 
 const App = () => {
-  const [currentPage, setCurrentPage] = useState('home');
-
-  const renderPage = () => {
-    switch(currentPage) {
-      case 'home': return <Home />;
-      case 'about': return <About />;
-      case 'services': return <Services />;
-      case 'products': return <Products />;
-      case 'gallery': return <Gallery />;
-      case 'blog': return <Blog />;
-      case 'careers': return <Careers />;
-      case 'contact': return <Contact />;
-      default: return <Home />;
-    }
-  };
-
   return (
-    <div className="App">
-      <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      <main>
-        {renderPage()}
-      </main>
-      <Footer />
-      <WhatsAppFloat />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/contact" element={<Contact />} />
+            {/* Catch-all route for 404 or redirect to home */}
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </main>
+        <Footer />
+        <WhatsAppFloat />
+      </div>
+    </Router>
   );
 };
 

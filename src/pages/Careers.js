@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PageHeader from '../components/PageHeader';
 
 const Careers = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -257,67 +258,14 @@ const Careers = () => {
   return (
     <div ref={sectionRef}>
       {/* Page Header */}
-      <section style={{
-        background: 'linear-gradient(135deg, #1a5276, #2980b9)',
-        color: 'white',
-        padding: '80px 0',
-        position: 'relative',
-        overflow: 'hidden'
-      }}>
-        {/* Background Pattern */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          right: '-20%',
-          width: '40%',
-          height: '100%',
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='2' fill='white' opacity='0.1'/%3E%3C/svg%3E")`,
-          opacity: 0.3
-        }} />
-        
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px', position: 'relative', zIndex: 2 }}>
-          <div style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-            transition: 'all 1s ease-out',
-            textAlign: 'center'
-          }}>
-            <h1 style={{
-              fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
-              fontWeight: '700',
-              marginBottom: '20px'
-            }}>
-              Join Our Team
-            </h1>
-            <p style={{
-              fontSize: '1.3rem',
-              marginBottom: '30px',
-              opacity: 0.9,
-              maxWidth: '800px',
-              margin: '0 auto'
-            }}>
-              Build your career with a leading name in international trade
-            </p>
-            
-            {/* Breadcrumb */}
-            <nav style={{ marginTop: '30px' }}>
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '10px',
-                background: 'rgba(255, 255, 255, 0.1)',
-                padding: '10px 20px',
-                borderRadius: '25px',
-                backdropFilter: 'blur(10px)'
-              }}>
-                <a href="#" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'none' }}>Home</a>
-                <span style={{ color: 'rgba(255, 255, 255, 0.6)' }}>/</span>
-                <span style={{ color: 'white' }}>Careers</span>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title="Join Our Team"
+        subtitle="Build your career with a leading name in international trade"
+        breadcrumbItems={[
+          { label: 'Home', href: '#' },
+          { label: 'Careers' }
+        ]}
+      />
 
       {/* Why Work With Us */}
       <section style={{

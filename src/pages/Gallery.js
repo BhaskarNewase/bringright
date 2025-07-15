@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PageHeader from '../components/PageHeader';
 
 const Gallery = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -249,75 +250,14 @@ const Gallery = () => {
   return (
     <div ref={sectionRef}>
       {/* Page Header */}
-      <section style={{
-        background: 'linear-gradient(135deg, #1a5276, #2980b9)',
-        color: 'white',
-        padding: '80px 0',
-        position: 'relative',
-        overflow: 'hidden'
-      }}>
-        {/* Background Pattern */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          right: '-20%',
-          width: '40%',
-          height: '100%',
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='2' fill='white' opacity='0.1'/%3E%3C/svg%3E")`,
-          opacity: 0.3
-        }} />
-        
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px', position: 'relative', zIndex: 2 }}>
-          <div style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-            transition: 'all 1s ease-out',
-            textAlign: 'center'
-          }}>
-            <h1 style={{
-              fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
-              fontWeight: '700',
-              marginBottom: '20px'
-            }}>
-              Our Gallery
-            </h1>
-            <p style={{
-              fontSize: '1.3rem',
-              marginBottom: '30px',
-              opacity: 0.9,
-              maxWidth: '800px',
-              margin: '0 auto 30px'
-            }}>
-              Visual Journey of Our Operations
-            </p>
-            <p style={{
-              fontSize: '1.1rem',
-              opacity: 0.8,
-              maxWidth: '700px',
-              margin: '0 auto'
-            }}>
-              Explore our facilities, products, partnerships, and global reach through images
-            </p>
-            
-            {/* Breadcrumb */}
-            <nav style={{ marginTop: '30px' }}>
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '10px',
-                background: 'rgba(255, 255, 255, 0.1)',
-                padding: '10px 20px',
-                borderRadius: '25px',
-                backdropFilter: 'blur(10px)'
-              }}>
-                <a href="#" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'none' }}>Home</a>
-                <span style={{ color: 'rgba(255, 255, 255, 0.6)' }}>/</span>
-                <span style={{ color: 'white' }}>Gallery</span>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title="Our Gallery"
+        subtitle="Visual Journey of Our Operations - Explore our facilities, products, partnerships, and global reach through images"
+        breadcrumbItems={[
+          { label: 'Home', href: '#' },
+          { label: 'Gallery' }
+        ]}
+      />
 
       {/* Gallery Filter Section */}
       <section style={{

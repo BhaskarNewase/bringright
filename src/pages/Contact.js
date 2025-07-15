@@ -1,5 +1,6 @@
 // Contact Page Component
 import React, { useState, useEffect } from 'react';
+import PageHeader from '../components/PageHeader';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -47,21 +48,15 @@ const Contact = () => {
   return (
     <div>
       {/* Page Header */}
-      <section className="page-header">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <h1 className="page-title">Contact Us</h1>
-              <nav aria-label="breadcrumb">
-                <ol className="breadcrumb">
-                  <li className="breadcrumb-item"><a href="#home">Home</a></li>
-                  <li className="breadcrumb-item active">Contact Us</li>
-                </ol>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title="Get in Touch"
+        subtitle="Ready to expand your global reach? Let's discuss how we can help your business grow internationally"
+        breadcrumbItems={[
+          { label: 'Home', href: '#' },
+          { label: 'Contact Us' }
+        ]}
+        showStats={false}
+      />
 
       {/* Contact Information Section */}
       <section className="contact-info-section py-5">

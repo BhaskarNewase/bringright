@@ -1,27 +1,21 @@
+import PageHeader from "../components/PageHeader";
 import RedesignedAboutSection from "../components/RedesignedAboutSection";
 
 // About Page Component
 const About = () => {
   return (
     <div>
-    <section class="page-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="page-title">About Bringright International Pvt Ltd</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active">About Us</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    <PageHeader
+        title="About Bringright International Pvt Ltd"
+        subtitle="Your trusted partner in global trade since 2022, connecting markets across continents"
+        breadcrumbItems={[
+        { label: 'Home', href: '#' },
+        { label: 'About Us' }
+        ]}
+    />
 
     <RedesignedAboutSection />
-
     
     <section class="vision-mission py-5 bg-light">
         <div class="container">

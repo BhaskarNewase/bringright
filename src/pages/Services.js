@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PageHeader from '../components/PageHeader';
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -196,68 +197,14 @@ const Services = () => {
   return (
     <div ref={sectionRef}>
       {/* Page Header */}
-      <section style={{
-        background: 'linear-gradient(135deg, #1a5276, #2980b9)',
-        color: 'white',
-        padding: '80px 0',
-        position: 'relative',
-        overflow: 'hidden'
-      }}>
-        {/* Background Pattern */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          right: '-20%',
-          width: '40%',
-          height: '100%',
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='2' fill='white' opacity='0.1'/%3E%3C/svg%3E")`,
-          opacity: 0.3
-        }} />
-        
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px', position: 'relative', zIndex: 2 }}>
-          <div style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-            transition: 'all 1s ease-out'
-          }}>
-            <h1 style={{
-              fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
-              fontWeight: '700',
-              marginBottom: '20px',
-              textAlign: 'center'
-            }}>
-              Our Services
-            </h1>
-            <p style={{
-              fontSize: '1.3rem',
-              marginBottom: '30px',
-              opacity: 0.9,
-              textAlign: 'center',
-              maxWidth: '800px',
-              margin: '0 auto'
-            }}>
-              Comprehensive global trade solutions tailored to meet your business needs
-            </p>
-            
-            {/* Breadcrumb */}
-            <nav style={{ textAlign: 'center', marginTop: '30px' }}>
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '10px',
-                background: 'rgba(255, 255, 255, 0.1)',
-                padding: '10px 20px',
-                borderRadius: '25px',
-                backdropFilter: 'blur(10px)'
-              }}>
-                <a href="#" style={{ color: 'rgba(255, 255, 255, 0.8)', textDecoration: 'none' }}>Home</a>
-                <span style={{ color: 'rgba(255, 255, 255, 0.6)' }}>/</span>
-                <span style={{ color: 'white' }}>Our Services</span>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title="Our Services"
+        subtitle="Comprehensive global trade solutions tailored to meet your business needs"
+        breadcrumbItems={[
+          { label: 'Home', href: '#' },
+          { label: 'Our Services' }
+        ]}
+      />
 
       {/* Services Overview */}
       <section style={{
