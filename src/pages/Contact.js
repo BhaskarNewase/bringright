@@ -1,5 +1,6 @@
-// Contact Page Component
+// Contact Page Component with EmailJS Integration for Bringright International
 import React, { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 import PageHeader from '../components/PageHeader';
 
 const Contact = () => {
@@ -17,6 +18,15 @@ const Contact = () => {
     privacy: false
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+  // service_8qkmvsq
+  // Initialize EmailJS
+  useEffect(() => {
+    // Initialize EmailJS with your public key
+    emailjs.init("E9WPe5MAjEMyKynhx"); // Replace with your actual public key
+  }, []);
+
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
@@ -25,24 +35,71 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      company: '',
-      country: '',
-      service: '',
-      subject: '',
-      message: '',
-      newsletter: false,
-      privacy: false
-    });
+    setIsSubmitting(true);
+    setSubmitStatus({ type: '', message: '' });
+
+    try {
+      // Prepare template parameters
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        to_email: 'contact@bringrightinternational.com',
+        subject: formData.subject,
+        message: formData.message,
+        phone: formData.phone || 'Not provided',
+        company: formData.company || 'Not provided',
+        country: formData.country || 'Not provided',
+        service: formData.service || 'Not specified',
+        newsletter: formData.newsletter ? 'Yes' : 'No',
+        submission_date: new Date().toLocaleString('en-IN', {
+          timeZone: 'Asia/Kolkata',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        })
+      };
+
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        'service_8qkmvsq', // Replace with your EmailJS service ID
+        'template_ult59hi', // Replace with your EmailJS template ID
+        templateParams
+      );
+
+      if (result.status === 200) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you for your message! We will get back to you soon.'
+        });
+
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          company: '',
+          country: '',
+          service: '',
+          subject: '',
+          message: '',
+          newsletter: false,
+          privacy: false
+        });
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setSubmitStatus({
+        type: 'error',
+        message: 'Sorry, there was an error sending your message. Please try again or contact us directly.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -76,7 +133,7 @@ const Contact = () => {
                 <p>YASHLAXMI S.NO. 54, NEAR PRANIT COMPUTER<br />
                 Karvenagar, Pune, Maharashtra<br />
                 India, 411052</p>
-                <a href="https://maps.google.com/?q=18.5204,73.8567" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">
+                <a href="https://maps.app.goo.gl/x8REExfiT8a7b4Ae9" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary btn-sm">
                   <i className="fas fa-directions me-1"></i>Get Directions
                 </a>
               </div>
@@ -88,10 +145,10 @@ const Contact = () => {
                   <i className="fas fa-phone-alt"></i>
                 </div>
                 <h4>Call Us</h4>
-                <p>Phone: <a href="tel:+911234567890">+91 1234567890</a><br />
-                Fax: +91 1234567891<br />
-                Toll Free: 1800-123-4567</p>
-                <a href="tel:+911234567890" className="btn btn-outline-primary btn-sm">
+                <p>Phone: <a href="tel:+919975349144">+91 9975349144</a><br />
+                <a href="tel:+918888653131">+91 8888653131</a><br />
+                <a href="tel:+919579670950">+91 9579670950</a></p>
+                <a href="tel:+919975349144" className="btn btn-outline-primary btn-sm">
                   <i className="fas fa-phone me-1"></i>Call Now
                 </a>
               </div>
@@ -105,7 +162,8 @@ const Contact = () => {
                 <h4>Email Us</h4>
                 <p>General: <a href="mailto:contact@bringrightinternational.com">contact@bringrightinternational.com</a><br />
                 Sales: <a href="mailto:sales@bringrightinternational.com">sales@bringrightinternational.com</a><br />
-                Support: <a href="mailto:support@bringrightinternational.com">support@bringrightinternational.com</a></p>
+                Support: <a href="mailto:support@bringrightinternational.com">support@bringrightinternational.com</a>
+                </p>
                 <a href="mailto:contact@bringrightinternational.com" className="btn btn-outline-primary btn-sm">
                   <i className="fas fa-envelope me-1"></i>Send Email
                 </a>
@@ -122,6 +180,15 @@ const Contact = () => {
             <div className="col-lg-8">
               <div className="contact-form-wrapper">
                 <h3 className="mb-4">Send Us a Message</h3>
+                
+                {/* Status Messages */}
+                {submitStatus.message && (
+                  <div className={`alert ${submitStatus.type === 'success' ? 'alert-success' : 'alert-danger'} mb-4`}>
+                    <i className={`fas ${submitStatus.type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} me-2`}></i>
+                    {submitStatus.message}
+                  </div>
+                )}
+
                 <form className="contact-form" onSubmit={handleSubmit}>
                   <div className="row g-3">
                     <div className="col-md-6">
@@ -134,6 +201,7 @@ const Contact = () => {
                         value={formData.firstName}
                         onChange={handleInputChange}
                         required 
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div className="col-md-6">
@@ -146,6 +214,7 @@ const Contact = () => {
                         value={formData.lastName}
                         onChange={handleInputChange}
                         required 
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div className="col-md-6">
@@ -158,6 +227,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required 
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div className="col-md-6">
@@ -169,6 +239,7 @@ const Contact = () => {
                         name="phone" 
                         value={formData.phone}
                         onChange={handleInputChange}
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div className="col-md-6">
@@ -180,6 +251,7 @@ const Contact = () => {
                         name="company" 
                         value={formData.company}
                         onChange={handleInputChange}
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div className="col-md-6">
@@ -190,6 +262,7 @@ const Contact = () => {
                         name="country"
                         value={formData.country}
                         onChange={handleInputChange}
+                        disabled={isSubmitting}
                       >
                         <option value="">Select Country</option>
                         <option value="IN">India</option>
@@ -208,6 +281,7 @@ const Contact = () => {
                         name="service"
                         value={formData.service}
                         onChange={handleInputChange}
+                        disabled={isSubmitting}
                       >
                         <option value="">Select Service</option>
                         <option value="import">Import Services</option>
@@ -227,6 +301,7 @@ const Contact = () => {
                         value={formData.subject}
                         onChange={handleInputChange}
                         required 
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div className="col-12">
@@ -240,6 +315,7 @@ const Contact = () => {
                         onChange={handleInputChange}
                         required 
                         placeholder="Please provide details about your inquiry..."
+                        disabled={isSubmitting}
                       ></textarea>
                     </div>
                     <div className="col-12">
@@ -251,6 +327,7 @@ const Contact = () => {
                           name="newsletter"
                           checked={formData.newsletter}
                           onChange={handleInputChange}
+                          disabled={isSubmitting}
                         />
                         <label className="form-check-label" htmlFor="newsletter">
                           Subscribe to our newsletter for trade insights and updates
@@ -267,6 +344,7 @@ const Contact = () => {
                           checked={formData.privacy}
                           onChange={handleInputChange}
                           required 
+                          disabled={isSubmitting}
                         />
                         <label className="form-check-label" htmlFor="privacy">
                           I agree to the Privacy Policy and Terms of Service *
@@ -274,8 +352,17 @@ const Contact = () => {
                       </div>
                     </div>
                     <div className="col-12">
-                      <button type="submit" className="btn btn-primary btn-lg">
-                        <i className="fas fa-paper-plane me-2"></i>Send Message
+                      <button type="submit" className="btn btn-primary btn-lg" disabled={isSubmitting}>
+                        {isSubmitting ? (
+                          <>
+                            <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            <i className="fas fa-paper-plane me-2"></i>Send Message
+                          </>
+                        )}
                       </button>
                     </div>
                   </div>
@@ -293,7 +380,7 @@ const Contact = () => {
                     </div>
                     <h5>WhatsApp Support</h5>
                     <p>Get instant support and quick responses to your queries</p>
-                    <a href="https://wa.me/911234567890" target="_blank" rel="noopener noreferrer" className="btn btn-success btn-lg w-100">
+                    <a href="https://wa.me/919975349144" target="_blank" rel="noopener noreferrer" className="btn btn-success btn-lg w-100">
                       <i className="fab fa-whatsapp me-2"></i>Start WhatsApp Chat
                     </a>
                     <small className="text-muted d-block mt-2">Available 24/7</small>

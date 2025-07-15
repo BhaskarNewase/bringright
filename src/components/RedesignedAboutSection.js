@@ -26,7 +26,7 @@ const RedesignedAboutSection = () => {
     },
     {
       icon: "🌍",
-      title: "50+ Countries Served",
+      title: "5+ Countries Served",
       description: "Global reach spanning major international markets",
       color: "#e74c3c"
     }
@@ -95,7 +95,7 @@ const RedesignedAboutSection = () => {
   return (
     <div ref={sectionRef} style={{
       background: 'linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f0f8ff 100%)',
-      padding: '80px 0',
+      padding: '80px 0 0 0',
       position: 'relative',
       overflow: 'hidden'
     }}>
@@ -130,7 +130,7 @@ const RedesignedAboutSection = () => {
             transition: 'all 1s ease-out'
           }}>
             {/* Section Badge */}
-            <div style={{
+            {/* <div style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '10px',
@@ -150,7 +150,7 @@ const RedesignedAboutSection = () => {
               }}>
                 About Our Company
               </span>
-            </div>
+            </div> */}
 
             {/* Main Heading */}
             <h2 style={{
@@ -189,7 +189,7 @@ const RedesignedAboutSection = () => {
                 lineHeight: '1.7',
                 marginBottom: '20px'
               }}>
-                As a Star Export House recognized by the Government of India, we have established ourselves as a leading player in international trade across multiple sectors including petroleum products, gems & jewellery, textiles, pharmaceuticals, and agricultural products.
+                As a Star Export House recognized by the Government of India, we have established ourselves as a leading player in international trade across multiple sectors including agricultural, engineering, pharmaceuticals and textiles products.
               </p>
 
               <p style={{
@@ -227,7 +227,7 @@ const RedesignedAboutSection = () => {
                   borderRadius: '50%'
                 }} />
                 <div style={{ position: 'relative', zIndex: 2 }}>
-                  <div style={{ fontSize: '2.5rem', fontWeight: '700', marginBottom: '5px' }}>30+</div>
+                  <div style={{ fontSize: '2.5rem', fontWeight: '700', marginBottom: '5px' }}>1+</div>
                   <div style={{ fontSize: '0.9rem', opacity: '0.9' }}>Years Experience</div>
                 </div>
               </div>
@@ -251,7 +251,7 @@ const RedesignedAboutSection = () => {
                   borderRadius: '50%'
                 }} />
                 <div style={{ position: 'relative', zIndex: 2 }}>
-                  <div style={{ fontSize: '2.5rem', fontWeight: '700', marginBottom: '5px' }}>1000+</div>
+                  <div style={{ fontSize: '2.5rem', fontWeight: '700', marginBottom: '5px' }}>5+</div>
                   <div style={{ fontSize: '0.9rem', opacity: '0.9' }}>Happy Clients</div>
                 </div>
               </div>
@@ -379,7 +379,7 @@ const RedesignedAboutSection = () => {
         </div>
 
         {/* Company Timeline */}
-        <div style={{
+        {/* <div style={{
           marginTop: '80px',
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
@@ -407,13 +407,12 @@ const RedesignedAboutSection = () => {
             </p>
           </div>
 
-          {/* Timeline */}
+   
           <div style={{
             position: 'relative',
             maxWidth: '1000px',
             margin: '0 auto'
           }}>
-            {/* Timeline Line */}
             <div style={{
               position: 'absolute',
               top: '50px',
@@ -425,7 +424,6 @@ const RedesignedAboutSection = () => {
               zIndex: 1
             }} />
 
-            {/* Timeline Events */}
             <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(5, 1fr)',
@@ -443,7 +441,6 @@ const RedesignedAboutSection = () => {
                     transition: `all 0.8s ease-out ${0.8 + index * 0.1}s`
                   }}
                 >
-                  {/* Timeline Node */}
                   <div style={{
                     width: '80px',
                     height: '80px',
@@ -473,7 +470,6 @@ const RedesignedAboutSection = () => {
                     {event.icon}
                   </div>
 
-                  {/* Event Details */}
                   <div style={{
                     background: 'white',
                     padding: '20px',
@@ -509,7 +505,7 @@ const RedesignedAboutSection = () => {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Floating Background Elements */}
