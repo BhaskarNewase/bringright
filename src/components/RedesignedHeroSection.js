@@ -30,6 +30,14 @@ const RedesignedHeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleProductRedirect = () => {
+    window.location.href = '/products';  // Then redirect
+  };
+
+  const handleServiceRedirect = () => {
+    window.location.href = '/services';  // Then redirect
+  };
+
   return (
     <div style={{
       background: 'linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 50%, #f0f8ff 100%)',
@@ -153,7 +161,7 @@ const RedesignedHeroSection = () => {
               onMouseOut={(e) => {
                 e.target.style.transform = 'translateY(0)';
                 e.target.style.boxShadow = '0 4px 15px rgba(26, 82, 118, 0.3)';
-              }}>
+              }} onClick={handleProductRedirect}>
                 <span>🚢</span> <span>Explore Products</span>
               </button>
               
@@ -182,7 +190,7 @@ const RedesignedHeroSection = () => {
                 e.target.style.background = 'transparent';
                 e.target.style.color = '#1a5276';
                 e.target.style.transform = 'translateY(0)';
-              }}>
+              }} onClick={handleServiceRedirect}>
                 <span>🌐</span> <span>Explore Services</span>
               </button>
             </div>

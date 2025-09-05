@@ -14,11 +14,11 @@ const Gallery = () => {
   const galleryCategories = [
     { id: '*', label: 'All', icon: '🌟' },
     { id: 'office', label: 'Office & Facilities', icon: '🏢' },
-    { id: 'products', label: 'Products', icon: '📦' },
-    { id: 'logistics', label: 'Logistics', icon: '🚛' },
-    { id: 'events', label: 'Events & Meetings', icon: '🤝' },
-    { id: 'certifications', label: 'Certifications', icon: '📜' },
-    { id: 'team', label: 'Team', icon: '👥' }
+    // { id: 'products', label: 'Products', icon: '📦' },
+    // { id: 'logistics', label: 'Logistics', icon: '🚛' },
+    // { id: 'events', label: 'Events & Meetings', icon: '🤝' },
+    // { id: 'certifications', label: 'Certifications', icon: '📜' },
+    // { id: 'team', label: 'Team', icon: '👥' }
   ];
 
   const galleryItems = [
@@ -36,149 +36,149 @@ const Gallery = () => {
       category: 'office',
       title: 'Conference Room',
       description: 'State-of-the-art meeting facilities',
-      image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop'
+      image: './img/2.webp',
+      thumbnail: './img/2.webp'
     },
     {
       id: 3,
       category: 'office',
       title: 'Reception Area',
       description: 'Welcoming entrance to our office',
-      image: 'https://images.unsplash.com/photo-1549298916-f52d724204b4?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1549298916-f52d724204b4?w=400&h=300&fit=crop'
+      image: './img/3.webp',
+      thumbnail: './img/3.webp'
     },
     // Products
-    {
-      id: 4,
-      category: 'products',
-      title: 'Petroleum Products',
-      description: 'High-quality refined petroleum products',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop'
-    },
-    {
-      id: 5,
-      category: 'products',
-      title: 'Gems & Jewellery',
-      description: 'Exquisite gems and handcrafted jewellery',
-      image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop'
-    },
-    {
-      id: 6,
-      category: 'products',
-      title: 'Textiles & Apparel',
-      description: 'Premium quality textiles and garments',
-      image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=400&h=300&fit=crop'
-    },
-    // Logistics
-    {
-      id: 7,
-      category: 'logistics',
-      title: 'Container Shipping',
-      description: 'Efficient container logistics operations',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop'
-    },
-    {
-      id: 8,
-      category: 'logistics',
-      title: 'Warehouse Operations',
-      description: 'Modern warehouse and storage facilities',
-      image: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400&h=300&fit=crop'
-    },
-    {
-      id: 9,
-      category: 'logistics',
-      title: 'Port Operations',
-      description: 'Strategic port handling and clearance',
-      image: 'https://images.unsplash.com/photo-1605642642554-ab9b86e6adee?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1605642642554-ab9b86e6adee?w=400&h=300&fit=crop'
-    },
-    // Events & Meetings
-    {
-      id: 10,
-      category: 'events',
-      title: 'Business Meeting',
-      description: 'Strategic planning and client discussions',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop'
-    },
+    // {
+    //   id: 4,
+    //   category: 'products',
+    //   title: 'Petroleum Products',
+    //   description: 'High-quality refined petroleum products',
+    //   image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop',
+    //   thumbnail: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop'
+    // },
+    // {
+    //   id: 5,
+    //   category: 'products',
+    //   title: 'Gems & Jewellery',
+    //   description: 'Exquisite gems and handcrafted jewellery',
+    //   image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&h=600&fit=crop',
+    //   thumbnail: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=300&fit=crop'
+    // },
+    // {
+    //   id: 6,
+    //   category: 'products',
+    //   title: 'Textiles & Apparel',
+    //   description: 'Premium quality textiles and garments',
+    //   image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&h=600&fit=crop',
+    //   thumbnail: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=400&h=300&fit=crop'
+    // },
+    // // Logistics
+    // {
+    //   id: 7,
+    //   category: 'logistics',
+    //   title: 'Container Shipping',
+    //   description: 'Efficient container logistics operations',
+    //   image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop',
+    //   thumbnail: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop'
+    // },
+    // {
+    //   id: 8,
+    //   category: 'logistics',
+    //   title: 'Warehouse Operations',
+    //   description: 'Modern warehouse and storage facilities',
+    //   image: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&h=600&fit=crop',
+    //   thumbnail: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400&h=300&fit=crop'
+    // },
+    // {
+    //   id: 9,
+    //   category: 'logistics',
+    //   title: 'Port Operations',
+    //   description: 'Strategic port handling and clearance',
+    //   image: 'https://images.unsplash.com/photo-1605642642554-ab9b86e6adee?w=800&h=600&fit=crop',
+    //   thumbnail: 'https://images.unsplash.com/photo-1605642642554-ab9b86e6adee?w=400&h=300&fit=crop'
+    // },
+    // // Events & Meetings
+    // {
+    //   id: 10,
+    //   category: 'events',
+    //   title: 'Business Meeting',
+    //   description: 'Strategic planning and client discussions',
+    //   image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop',
+    //   thumbnail: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop'
+    // },
     {
       id: 11,
       category: 'events',
       title: 'Trade Exhibition',
       description: 'Participating in international trade shows',
-      image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop'
+      image: './img/1.webp',
+      thumbnail: './img/1.webp'
     },
-    {
-      id: 12,
-      category: 'events',
-      title: 'Award Ceremony',
-      description: 'Recognition for excellence in export',
-      image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400&h=300&fit=crop'
-    },
-    // Certifications
-    {
-      id: 13,
-      category: 'certifications',
-      title: 'Star Export House',
-      description: 'Government of India recognition',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop'
-    },
-    {
-      id: 14,
-      category: 'certifications',
-      title: 'ISO Certification',
-      description: 'International quality standards compliance',
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop'
-    },
-    {
-      id: 15,
-      category: 'certifications',
-      title: 'FSSC 22000-2011',
-      description: 'Food safety system certification',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop'
-    },
-    // Team
-    {
-      id: 16,
-      category: 'team',
-      title: 'Executive Team',
-      description: 'Leadership driving our global success',
-      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop'
-    },
-    {
-      id: 17,
-      category: 'team',
-      title: 'Operations Team',
-      description: 'Dedicated professionals ensuring smooth operations',
-      image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=300&fit=crop'
-    },
-    {
-      id: 18,
-      category: 'team',
-      title: 'Customer Service Team',
-      description: '24/7 support for our global clients',
-      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop',
-      thumbnail: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=300&fit=crop'
-    }
+    // {
+    //   id: 12,
+    //   category: 'events',
+    //   title: 'Award Ceremony',
+    //   description: 'Recognition for excellence in export',
+    //   image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&h=600&fit=crop',
+    //   thumbnail: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400&h=300&fit=crop'
+    // },
+    // // Certifications
+    // {
+    //   id: 13,
+    //   category: 'certifications',
+    //   title: 'Star Export House',
+    //   description: 'Government of India recognition',
+    //   image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
+    //   thumbnail: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop'
+    // },
+    // {
+    //   id: 14,
+    //   category: 'certifications',
+    //   title: 'ISO Certification',
+    //   description: 'International quality standards compliance',
+    //   image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop',
+    //   thumbnail: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop'
+    // },
+    // {
+    //   id: 15,
+    //   category: 'certifications',
+    //   title: 'FSSC 22000-2011',
+    //   description: 'Food safety system certification',
+    //   image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
+    //   thumbnail: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop'
+    // },
+    // // Team
+    // {
+    //   id: 16,
+    //   category: 'team',
+    //   title: 'Executive Team',
+    //   description: 'Leadership driving our global success',
+    //   image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop',
+    //   thumbnail: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop'
+    // },
+    // {
+    //   id: 17,
+    //   category: 'team',
+    //   title: 'Operations Team',
+    //   description: 'Dedicated professionals ensuring smooth operations',
+    //   image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&h=600&fit=crop',
+    //   thumbnail: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=300&fit=crop'
+    // },
+    // {
+    //   id: 18,
+    //   category: 'team',
+    //   title: 'Customer Service Team',
+    //   description: '24/7 support for our global clients',
+    //   image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop',
+    //   thumbnail: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=300&fit=crop'
+    // }
   ];
 
   const galleryStats = [
-    { icon: '📸', number: '500+', label: 'Photos in Gallery' },
-    { icon: '🏢', number: '5', label: 'Office Locations' },
-    { icon: '🏆', number: '15+', label: 'Awards & Certifications' },
-    { icon: '🌍', number: '50+', label: 'Countries Served' }
+    { icon: '📸', number: '10+', label: 'Photos in Gallery' },
+    { icon: '🏢', number: '3', label: 'Office Locations' },
+    { icon: '🏆', number: '5+', label: 'Awards & Certifications' },
+    { icon: '🌍', number: '5+', label: 'Countries Served' }
   ];
 
   const filteredItems = activeFilter === '*' 
@@ -609,6 +609,9 @@ const Gallery = () => {
               onMouseOut={(e) => {
                 e.target.style.transform = 'translateY(0)';
                 e.target.style.boxShadow = 'none';
+              }}
+              onClick={() => {
+                window.open("https://www.instagram.com/bringright_international/", "_blank"); // opens in new tab
               }}>
                 📷 Instagram
               </button>
@@ -633,6 +636,9 @@ const Gallery = () => {
               onMouseOut={(e) => {
                 e.target.style.transform = 'translateY(0)';
                 e.target.style.boxShadow = 'none';
+              }}
+              onClick={() => {
+                window.open("https://www.linkedin.com/company/bring-right-international-pvt-ltd", "_blank"); // opens in new tab
               }}>
                 💼 LinkedIn
               </button>
